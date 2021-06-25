@@ -1,0 +1,32 @@
+{
+  "name": "google_clone",
+  "version": "1.0.0",
+  "description": "google home clone",
+  "main": "index.js",
+  "dependencies": {
+    "save": "^2.4.0",
+    "material-design-icons": "^3.0.1"
+  },
+  "devDependencies": {
+    "node-sass": "^6.0.1"
+  },
+  "scripts": {
+    "watch:sass": "node-sass sass/main.scss css/style.css -w",
+    "devserver": "live-server",
+    "start": "npm-run-all --parallel devserver watch:sass",
+    "compile:sass": "node-sass sass/main.scss css/style.comp.css",
+    "prefix:css": "postcss --use autoprefixer -b 'last 10 versions' css/style.comp.css -o css/style.prefix.css",
+    "compress:css": "node-sass css/style.prefix.css css/style.css --output-style compressed",
+    "build:css": "npm-run-all compile:sass prefix:css compress:css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alexandruamuntean/google_clone.git"
+  },
+  "author": "Alex Muntean",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/alexandruamuntean/google_clone/issues"
+  },
+  "homepage": "https://github.com/alexandruamuntean/google_clone#readme"
+}
